@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import DarkTile from "../components/DarkTile/DarkTile.astro";
+import TextTile from "../components/TextTile/TextTile.astro";
 import * as styles from "./index.css"
 ---
 
@@ -12,9 +12,9 @@ import * as styles from "./index.css"
   </head>
   <body class={styles.body}>
     <div class={styles.gridContainer}>
-      <DarkTile className={styles.oneColumGridSquare} text="One" />
-      <DarkTile className={styles.oneColumGridSquare} text="Two"/>
-      <DarkTile className={styles.twoColumGridSquare} text="Three" />
+      <TextTile className={styles.oneColumGridSquare} text="Daniel" />
+      <TextTile className={styles.oneColumGridSquare} text="Two"/>
+      <TextTile className={styles.twoColumGridSquare} text="Three" />
     </div>
   </body>
 </html>
