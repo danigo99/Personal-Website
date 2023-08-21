@@ -1,0 +1,11 @@
+---
+interface Props {
+  className?: string;
+}
+import clsx from "clsx";
+import * as styles from "./ImageTile.css";
+
+const { className } = Astro.props;
+---
+
+<div class={clsx(styles.container, className)}></div>

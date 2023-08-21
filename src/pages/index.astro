@@ -2,7 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import TextTile from "../components/TextTile/TextTile.astro";
-import * as styles from "./index.css"
+import * as styles from "./index.css";
+import ImageTile from "../components/ImageTile/ImageTile.astro";
 ---
 
 <!DOCTYPE html>
@@ -13,7 +14,8 @@ import * as styles from "./index.css"
   <body class={styles.body}>
     <div class={styles.gridContainer}>
       <TextTile className={styles.oneColumGridSquare} text="Daniel" />
-      <TextTile className={styles.oneColumGridSquare} text="Two"/>
+      <ImageTile className={styles.oneColumGridSquare} />
+      <TextTile className={styles.oneColumGridSquare} text="Two" />
       <TextTile className={styles.twoColumGridSquare} text="Three" />
     </div>
   </body>

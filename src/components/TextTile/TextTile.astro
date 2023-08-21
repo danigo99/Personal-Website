@@ -1,13 +1,14 @@
 ---
 interface Props {
-  className: string
-  text: string
+  className: string;
+  text: string;
 }
 
 const { className, text } = Astro.props;
-import * as styles from "./TextTile.css"
+import clsx from "clsx";
+import * as styles from "./TextTile.css";
 ---
 
-<div class={`${styles.container} ${className}`}>
+<div class={clsx(styles.container, className)}>
   <p class={styles.text}>{text}</p>
 </div>

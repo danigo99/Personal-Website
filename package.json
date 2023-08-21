@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@vanilla-extract/sprinkles": "^1.6.1",
     "astro": "^2.10.0",
-    "astro-vanilla-extract": "^2.2.0"
+    "astro-vanilla-extract": "^2.2.0",
+    "clsx": "^2.0.0"
   }
 }
