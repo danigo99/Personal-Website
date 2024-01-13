@@ -1,11 +1,24 @@
 ---
 interface Props {
   className?: string;
+  src: string;
+  href?: string;
 }
 import clsx from "clsx";
 import * as styles from "./ImageTile.css";
 
-const { className } = Astro.props;
+const { className, src, href } = Astro.props;
 ---
 
-<div class={clsx(styles.container, className)}></div>
+<div
+  class={clsx(styles.container, className)}
+  style={{ backgroundImage: `url(${src})` }}
+>
+  {
+    href && (
+      <a href={href} class={styles.linkTrigger}>
+        <img src={"../../../openArrow.svg"} alt="arrow" height={20} />
+      </a>
+    )
+  }
+</div>

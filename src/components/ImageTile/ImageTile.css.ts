@@ -9,12 +9,31 @@ export const container = style({
   color: tokens.color.white,
   justifyContent: "center",
   alignItems: "center",
-  backgroundImage: "url(../../../public/me.jpg)",
   backgroundSize: "cover",
   backgroundPosition: "center",
   aspectRatio: 1,
+  position: "relative",
 });
 
-export const text = style({
-  fontSize: `${150 / 16}rem`,
+export const linkTrigger = style({
+  mixBlendMode: "difference",
+  display: "flex",
+  position: "absolute",
+  bottom: 40,
+  left: 40,
+  textDecoration: "none",
+  color: "white",
+  borderRadius: 32,
+  borderWidth: 2,
+  borderColor: "white",
+  borderStyle: "solid",
+  alignContent: "center",
+  padding: 12,
+  gap: 8,
+  transition: ".1s linear",
+  selectors: {
+    "&:hover": {
+      outline: "2px solid white",
+    },
+  },
 });

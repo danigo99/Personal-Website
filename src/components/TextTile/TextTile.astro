@@ -3,13 +3,21 @@ interface Props {
   className: string;
   text: string;
   variant?: "small" | "large";
+  href?: string;
 }
 
-const { className, text, variant = "large" } = Astro.props;
+const { className, text, variant = "large", href } = Astro.props;
 import clsx from "clsx";
 import * as styles from "./TextTile.css";
 ---
 
 <div class={clsx(styles.container, className)}>
   <p class={styles.text[variant]}>{text}</p>
+  {
+    href && (
+      <a href={href} class={styles.linkTrigger}>
+        <img src={"../../../openArrow.svg"} alt="arrow" height={20} />
+      </a>
+    )
+  }
 </div>
