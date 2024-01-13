@@ -31,3 +31,7 @@ export const body = style({
   backgroundColor: "black",
   fontFamily: "Trebuchet MS",
 });
+
+export const brownTile = style({
+  backgroundColor: "#a98",
+});

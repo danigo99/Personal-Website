@@ -6,12 +6,12 @@ import * as styles from "./index.css";
 import {
   text,
   container as textTile,
-  brownContainer,
 } from "../components/TextTile/TextTile.css";
 import ImageTile from "../components/ImageTile/ImageTile.astro";
 import LinksTile from "../components/LinksTile/LinksTile.astro";
 import Link from "../components/Link/Link.astro";
 import clsx from "clsx";
+import BlogTile from "../components/BlogTile/BlogTile.astro";
 ---
 
 <!DOCTYPE html>
@@ -30,18 +30,37 @@ import clsx from "clsx";
         class={clsx(
           styles.oneColumGridSquare,
           styles.twoRowGridSquare,
-          textTile,
-          brownContainer
+          styles.brownTile,
+          textTile
         )}
       >
         <p class={text.small}>
-          Fullstack developer at <Link href="https://www.theodo.co.uk/">
+          Hey 👋 I'm Dan, a fullstack developer at <Link
+            href="https://www.theodo.co.uk/"
+          >
             Theodo UK
           </Link> and co-founder of <Link href="https://bento.me/575">575</Link>
         </p>
       </div>
-      <LinksTile className={styles.oneColumGridSquare} />
+      <TextTile
+        className={styles.oneColumGridSquare}
+        text="📝 Simplify your full-stack applications with XState"
+        href="https://blog.theodo.com/2022/07/simplify-your-applications-with-xstate/"
+        variant="small"
+      />
       <TextTile className={styles.twoColumGridSquare} text="Belo Gonçalves" />
+      <TextTile
+        className={styles.oneColumGridSquare}
+        text="🎥 Bringing poetry to the masses: a 575 story"
+        href="https://www.youtube.com/watch?v=UpuT8m8A2ic"
+        variant="small"
+      />
+      <ImageTile
+        className={clsx(styles.oneColumGridSquare, styles.twoRowGridSquare)}
+        src="/575Screen.png"
+        href="https://apps.apple.com/gb/app/575/id6446295950"
+      />
+      <LinksTile className={styles.oneColumGridSquare} />
     </div>
   </body>
 </html>

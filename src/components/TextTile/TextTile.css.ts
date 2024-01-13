@@ -10,10 +10,6 @@ export const container = style({
   position: "relative",
 });
 
-export const brownContainer = style({
-  backgroundColor: "#a98",
-});
-
 export const text = styleVariants({
   large: {
     fontSize: "150px",
@@ -26,27 +22,5 @@ export const text = styleVariants({
     lineHeight: "40px",
     textAlign: "center",
     color: "#D1D1D1",
-  },
-});
-
-export const linkTrigger = style({
-  display: "flex",
-  position: "absolute",
-  bottom: 40,
-  left: 40,
-  textDecoration: "none",
-  color: "white",
-  borderRadius: 32,
-  borderWidth: 2,
-  borderColor: "white",
-  borderStyle: "solid",
-  alignContent: "center",
-  padding: 12,
-  gap: 8,
-  transition: ".1s linear",
-  selectors: {
-    "&:hover": {
-      outline: "2px solid white",
-    },
   },
 });

@@ -9,15 +9,17 @@ interface Props {
 const { className, text, variant = "large", href } = Astro.props;
 import clsx from "clsx";
 import * as styles from "./TextTile.css";
+import Link from "../Link/Link.astro";
 ---
 
 <div class={clsx(styles.container, className)}>
-  <p class={styles.text[variant]}>{text}</p>
   {
-    href && (
-      <a href={href} class={styles.linkTrigger}>
-        <img src={"../../../openArrow.svg"} alt="arrow" height={20} />
-      </a>
+    href ? (
+      <Link href={href} className={clsx(styles.text[variant])}>
+        {text}
+      </Link>
+    ) : (
+      <p class={clsx(styles.text[variant])}>{text}</p>
     )
   }
 </div>

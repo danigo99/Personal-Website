@@ -4,11 +4,12 @@ import * as styles from "./Link.css";
 
 interface Props {
   href: string;
+  className?: string;
 }
 
-const { href } = Astro.props;
+const { href, className } = Astro.props;
 ---
 
-<a href={href} target="_blank" class={styles.link}>
+<a href={href} target="_blank" class={clsx(styles.link, className)}>
   <slot />
 </a>

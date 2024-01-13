@@ -1,0 +1,24 @@
+---
+interface Props {
+  className: string;
+  title: string;
+  blurb: string;
+  href: string;
+}
+
+const { className, title, blurb, href } = Astro.props;
+import clsx from "clsx";
+import * as styles from "./BlogTile.css";
+---
+
+<div class={clsx(styles.container, className)}>
+  <p class={styles.title}>{title}</p>
+  <p class={styles.blurb}>{blurb}</p>
+  {
+    href && (
+      <a href={href} class={styles.linkTrigger}>
+        <img src={"../../../openArrow.svg"} alt="arrow" height={20} />
+      </a>
+    )
+  }
+</div>
