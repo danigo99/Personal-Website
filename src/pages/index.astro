@@ -3,7 +3,15 @@ import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import TextTile from "../components/TextTile/TextTile.astro";
 import * as styles from "./index.css";
+import {
+  text,
+  container as textTile,
+  brownContainer,
+} from "../components/TextTile/TextTile.css";
 import ImageTile from "../components/ImageTile/ImageTile.astro";
+import LinksTile from "../components/LinksTile/LinksTile.astro";
+import Link from "../components/Link/Link.astro";
+import clsx from "clsx";
 ---
 
 <!DOCTYPE html>
@@ -14,9 +22,25 @@ import ImageTile from "../components/ImageTile/ImageTile.astro";
   <body class={styles.body}>
     <div class={styles.gridContainer}>
       <TextTile className={styles.oneColumGridSquare} text="Daniel" />
-      <ImageTile className={styles.oneColumGridSquare} />
-      <TextTile className={styles.oneColumGridSquare} text="Two" />
-      <TextTile className={styles.twoColumGridSquare} text="Three" />
+      <ImageTile
+        className={clsx(styles.oneColumGridSquare, styles.twoRowGridSquare)}
+      />
+      <div
+        class={clsx(
+          styles.oneColumGridSquare,
+          styles.twoRowGridSquare,
+          textTile,
+          brownContainer
+        )}
+      >
+        <p class={text.small}>
+          Fullstack developer at <Link href="https://www.theodo.co.uk/">
+            Theodo UK
+          </Link> and co-founder of <Link href="https://bento.me/575">575</Link>
+        </p>
+      </div>
+      <LinksTile className={styles.oneColumGridSquare} />
+      <TextTile className={styles.twoColumGridSquare} text="Belo Gonçalves" />
     </div>
   </body>
 </html>

@@ -42,6 +42,10 @@ export const tokens = {
     "1": "span 1 / span 1",
     "2": "span 2 / span 2",
   },
+  gridRow: {
+    "1": "span 1 / span 1",
+    "2": "span 2 / span 2",
+  },
 } as const;
 
 export const [themeClass, vars] = createTheme(tokens);

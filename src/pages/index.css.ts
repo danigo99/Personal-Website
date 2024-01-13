@@ -5,6 +5,7 @@ import { tokens } from "../theme/vars.css";
 export const gridContainer = style({
   display: "grid",
   gridTemplateColumns: tokens.gridTemplateColumns["2"],
+  gridAutoRows: "1fr",
   gap: tokens.space[16],
 });
 
@@ -16,6 +17,10 @@ export const twoColumGridSquare = style({
   gridColumn: tokens.gridColumn["2"],
 });
 
+export const twoRowGridSquare = style({
+  gridRow: tokens.gridRow["2"],
+});
+
 const trebuchet = "Trebuchet";
 
 globalFontFace(trebuchet, {
@@ -24,5 +29,5 @@ globalFontFace(trebuchet, {
 
 export const body = style({
   backgroundColor: "black",
-  fontFamily: tokens.fontFamily.body,
+  fontFamily: "Trebuchet MS",
 });

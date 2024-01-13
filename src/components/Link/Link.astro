@@ -1,0 +1,14 @@
+---
+import clsx from "clsx";
+import * as styles from "./Link.css";
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href} target="_blank" class={styles.link}>
+  <slot />
+</a>

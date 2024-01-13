@@ -2,13 +2,14 @@
 interface Props {
   className: string;
   text: string;
+  variant?: "small" | "large";
 }
 
-const { className, text } = Astro.props;
+const { className, text, variant = "large" } = Astro.props;
 import clsx from "clsx";
 import * as styles from "./TextTile.css";
 ---
 
 <div class={clsx(styles.container, className)}>
-  <p class={styles.text}>{text}</p>
+  <p class={styles.text[variant]}>{text}</p>
 </div>
