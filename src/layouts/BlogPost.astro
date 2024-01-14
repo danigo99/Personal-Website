@@ -1,32 +1,21 @@
 ---
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
-
-const {
-  content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props;
+import * as styles from "./BlogPost.css";
+const { frontmatter } = Astro.props;
 ---
 
-<main>
-  <article>
-    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-    <h1 class="title">{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
-    {
-      updatedDate && (
-        <div>
-          Last updated on <time>{updatedDate}</time>
-        </div>
-      )
-    }
-    <hr />
-    <slot />
-  </article>
-</main>
+<html>
+  <head>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class={styles.body}>
+    <div class={styles.container}>
+      <div class={styles.closeButton}>
+        <a href="/"><img src="/close.svg" height={40} /></a>
+      </div>
+      <h1>{frontmatter.title}</h1>
+      <div class={styles.date}>{frontmatter.date}</div>
+      <slot />
+    </div>
+  </body>
+</html>
