@@ -4,7 +4,7 @@ import { tokens } from "../theme/vars.css";
 
 export const gridContainer = style({
   display: "grid",
-  gridTemplateColumns: tokens.gridTemplateColumns["2"],
+  gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
   gridAutoRows: "1fr",
   gap: tokens.space[16],
 });
@@ -15,6 +15,11 @@ export const oneColumGridSquare = style({
 
 export const twoColumGridSquare = style({
   gridColumn: tokens.gridColumn["2"],
+  "@media": {
+    "screen and (max-width:700px)": {
+      gridColumn: 1,
+    },
+  },
 });
 
 export const twoRowGridSquare = style({

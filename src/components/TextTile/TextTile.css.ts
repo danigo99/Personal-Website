@@ -15,6 +15,18 @@ export const text = styleVariants({
     fontSize: "150px",
     lineHeight: "50px",
     color: tokens.color.white,
+    "@media": {
+      "screen and (max-width:900px)": {
+        marginInline: 100,
+        lineHeight: "80px",
+        fontSize: "80px",
+      },
+      "screen and (max-width:1080px)": {
+        marginInline: 100,
+        lineHeight: "100px",
+        fontSize: "100px",
+      },
+    },
   },
   small: {
     fontSize: "32px",
