@@ -4,9 +4,10 @@ interface Props {
   text: string;
   variant?: "small" | "large";
   href?: string;
+  target?: string;
 }
 
-const { className, text, variant = "large", href } = Astro.props;
+const { className, text, variant = "large", href, target } = Astro.props;
 import clsx from "clsx";
 import * as styles from "./TextTile.css";
 import Link from "../Link/Link.astro";
@@ -15,7 +16,7 @@ import Link from "../Link/Link.astro";
 <div class={clsx(styles.container, className)}>
   {
     href ? (
-      <Link href={href} className={clsx(styles.text[variant])}>
+      <Link href={href} target={target} className={clsx(styles.text[variant])}>
         {text}
       </Link>
     ) : (

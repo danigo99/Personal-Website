@@ -5,11 +5,12 @@ import * as styles from "./Link.css";
 interface Props {
   href: string;
   className?: string;
+  target?: string;
 }
 
-const { href, className } = Astro.props;
+const { href, className, target = "_blank" } = Astro.props;
 ---
 
-<a href={href} target="_blank" class={clsx(styles.link, className)}>
+<a href={href} target={target} class={clsx(styles.link, className)}>
   <slot />
 </a>

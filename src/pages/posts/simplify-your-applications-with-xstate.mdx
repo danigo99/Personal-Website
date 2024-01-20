@@ -93,24 +93,24 @@ For example, sending the notification to the client, we might do it in one of tw
 
 ```javascript
 "Preparing": {
-	"on": {
-		"Send out": {
-			"Target": "Out for Delivery",
-			"actions": () => {
-				console.log("Your Pizza is almost there!");
-				// Trigger API events and updates in here
-			}
-		}
-	}
+  "on": {
+    "Send out": {
+      "Target": "Out for Delivery",
+      "actions": () => {
+        console.log("Your Pizza is almost there!");
+        // Trigger API events and updates in here
+      }
+    }
+  }
 },
 "Out for delivery": {
-	"entry": () => {
-		console.log("Your Pizza is almost there!");
-		// Trigger API events and updates in here instead
-	},
-	"on": {
-		"Deliver": "Delivered"
-	}
+  "entry": () => {
+    console.log("Your Pizza is almost there!");
+    // Trigger API events and updates in here instead
+  },
+  "on": {
+    "Deliver": "Delivered"
+  }
 }
 ```
 
