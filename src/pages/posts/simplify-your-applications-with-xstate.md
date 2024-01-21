@@ -1,7 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: "Simplify your full-stack applications with XState"
-thumbnail: ./Blog_Cover.png
 date: June 6, 2022
 ---
 
